@@ -1,0 +1,128 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Poppins&display=swap");
+
+/* Define color variables */
+:root {
+  --primary-color: #003049;
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #e9e9e9;
+}
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Landing Section */
+.landing-area {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 30px;
+  background-color: #f0f0f0;
+  flex-wrap: wrap; /* Ensures content doesn't overflow */
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.text-section {
+  flex: 1;
+  padding-right: 30px;
+  text-align: left;
+}
+
+.text-section h1 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.text-section .designation {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.text-section .department,
+.text-section .institute {
+  font-family: "Poppins";
+  font-size: 24px;
+  color: var(--black);
+}
+
+/* Photo Section styling */
+.photo-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.photo-section img {
+  width: 500px; /* Set width for the circular image */
+  height: 500px; /* Set height equal to width for perfect circle */
+  object-fit: cover; /* Ensure the image covers the entire circle without distortion */
+  border-radius: 50%; /* Makes the image circular */
+  border: 40px solid var(--primary-color); /* Border color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  /* Mobile and tablet view */
+  .landing-area {
+    padding: 40px 15px; /* Adjust padding */
+  }
+
+  .landing-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-section {
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .photo-section {
+    margin-top: 20px;
+    height: 200px; /* Adjust the height to fit smaller screen */
+    justify-content: center; /* Center the image in the section */
+  }
+
+  .photo-section img {
+    width: 200px; /* Make the image smaller on mobile */
+    height: 200px; /* Keep the aspect ratio for mobile */
+    border: 15px solid var(--primary-color); /* Border color */
+  }
+
+  .text-section h1 {
+    font-size: 40px; /* Smaller text size for mobile */
+  }
+
+  .text-section .designation {
+    font-size: 20px; /* Smaller text size for mobile */
+  }
+
+  .text-section .department,
+  .text-section .institute {
+    font-size: 18px; /* Smaller text size for mobile */
+  }
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leena Vachhani | Home</title>
+    <script src="../static/js/nav.js"></script>
+    <script src="../static/js/career.js"></script>
+    <link rel="stylesheet" href="../static/css/nav.css" />
+    <link rel="stylesheet" href="../static/css/landing.css" />
+    <link rel="stylesheet" href="../static/css/info_career.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#">Leena Vachhani</a>
+      </div>
+      <ul class="nav-links">
+        <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('research') }}">Research</a></li>
+        <li>
+          <a href="{{ url_for('academics') }}">Academics</a>
+        </li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+    <section class="landing-area">
+      <div class="landing-content">
+        <div class="text-section">
+          <h1>Dr. Leena Vachhani</h1>
+          <p class="designation">Professor</p>
+          <p class="department">Systems and Control Engineering</p>
+          <p class="institute">Indian Institute of Technology Bombay</p>
+        </div>
+        <div class="photo-section">
+          <img src="../static/src/leena_pic.jpeg" alt="Professor John Doe" />
+        </div>
+      </div>
+    </section>
+    <section class="bio-section">
+      <div class="bio-content">
+        <h2>About Me</h2>
+        <p>
+          I have largely two domains of interest : one, planning and control of
+          autonomous vehicles and two, embedded control systems. I have also
+          contributes by merging these two domains at various times and have
+          been instrumental in developing two laboratories embedded control lab
+          and Autonomous Robots and Multi-agent Systems (ARMS) lab.
+        </p>
+        <p>
+          The research in the embedded control area concentrates on analysing
+          the effect of different limitations of embedded platforms, when the
+          embedded platform is used as a controller. The laboratory experiments
+          are designed to provide hands-on experience on different limitations
+          and their effect on the performance of a control system.
+        </p>
+        <p>
+          My approach in solving autonomous robotic problems is more or less
+          bottom-up, where I solve a problem considering the practical
+          limitations of sensors, actuators and environment. Solutions are
+          verified with simulations and actual implementations. The
+          implementation mostly targets an embedded platform. My effort in this
+          field is to establish expertise in real problems related to autonomous
+          robotics. I have been guiding a team of about 25 students (from
+          various departments) in designing and developing underwater vehicle
+          (more information available at www.auv-iitb.org)for participation in
+          international ROBOSUB competition. This activity has generated my
+          interest in underwater robotics where sensing and communication are
+          critical issues. Based on my research experience in these two domains,
+          my interests have moved to exploring the are of Robotic applications
+          in IoT and IoE framework where my interests are also in fault
+          identification, fault-tolerant systems, AI/ML approaches, IoT device
+          deployment and end-to-end solutions for IoT framework.
+        </p>
+      </div>
+    </section>
+    <section class="career">
+      <div class="career-title-container">
+        <h2 class="career-title">Career</h2>
+      </div>
+
+      <div class="career-content">
+        <div class="career-nav">
+          <button class="career-tab" onclick="toggleCareerContent('research')">
+            Research Interests
+          </button>
+          <button
+            class="career-tab"
+            onclick="toggleCareerContent('experience')"
+          >
+            Experience
+          </button>
+          <button class="career-tab" onclick="toggleCareerContent('education')">
+            Education
+          </button>
+        </div>
+
+        <div class="career-details">
+          <div class="career-item" id="research">
+            <ul class="career-list">
+              <li class="career-list-item">
+                Motion Planning of Autonomous Vehicles
+              </li>
+              <li class="career-list-item">
+                Autonomous Tasks for Underwater Vehicle
+              </li>
+              <li class="career-list-item">
+                Multi-Agent Patrolling, Exploration and Mapping
+              </li>
+              <li class="career-list-item">Embedded Control Systems</li>
+              <li class="career-list-item">
+                Robotic Applications in IoT and IoE framework
+              </li>
+            </ul>
+          </div>
+
+          <div class="career-item" id="experience" style="display: none">
+            <ul class="career-list">
+              <li class="career-list-item">
+                <div class="role">Professor</div>
+                <div class="institution">
+                  Indian Institute of Technology Bombay
+                </div>
+                <div class="dates">May 2021 - Till Date</div>
+              </li>
+              <li class="career-list-item">
+                <div class="role">Associate Professor</div>
+                <div class="institution">
+                  Indian Institute of Technology Bombay
+                </div>
+                <div class="dates">May 2016 - May 2021</div>
+              </li>
+              <li class="career-list-item">
+                <div class="role">Assistant Professor</div>
+                <div class="institution">
+                  Indian Institute of Technology Bombay
+                </div>
+                <div class="dates">Dec 2009 - May 2016</div>
+              </li>
+              <li class="career-list-item">
+                <div class="role">Assistant Professor</div>
+                <div class="institution">
+                  Indian Institute of Information Technology, Design &
+                  Manufacturing (IIITD&M) Kancheepuram, Chennai
+                </div>
+                <div class="dates">July 2009 - Dec 2009</div>
+              </li>
+              <li class="career-list-item">
+                <div class="role">Lecturer</div>
+                <div class="institution">
+                  Faculty of Technology and Engineering, The Maharaja Sayajirao
+                  University of Baroda
+                </div>
+                <div class="dates">Jan 2000 - Oct 2004</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="career-item" id="education" style="display: none">
+            <ul class="career-list">
+              <li class="career-list-item">
+                <div class="degree">
+                  Doctor of Philosophy, Robotic Path Planning, Embedded Systems,
+                  2009
+                </div>
+                <div class="institution">
+                  Indian Institute of Technology, Madras
+                </div>
+              </li>
+              <li class="career-list-item">
+                <div class="degree">
+                  Master of Engineering, Microprocessor Systems and
+                  Applications, 1999
+                </div>
+                <div class="institution">
+                  Faculty of Technology and Engineering, The Maharaja Sayajirao
+                  University of Baroda
+                </div>
+              </li>
+              <li class="career-list-item">
+                <div class="degree">
+                  Bachelor Of Engineering, Electronics, 1996
+                </div>
+                <div class="institution">
+                  Bhilai Institute of Technology, Durg
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

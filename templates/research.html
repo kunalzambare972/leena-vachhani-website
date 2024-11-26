@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leena Vachhani | Research</title>
+    <script src="../static/js/nav.js"></script>
+    <script src="../static/js/research_scroll.js"></script>
+    <script src="../static/js/filter_pub.js"></script>
+    <script src="../static/js/filter_proj.js"></script>
+    <link rel="stylesheet" href="../static/css/nav.css" />
+    <link rel="stylesheet" href="../static/css/research_landing.css" />
+    <link rel="stylesheet" href="../static/css/project.css" />
+    <link rel="stylesheet" href="../static/css/publication.css" />
+    <link rel="stylesheet" href="../static/css/lab.css" />
+    <link rel="stylesheet" href="../static/css/industry.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#">Leena Vachhani</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a class="active" href="{{ url_for('research') }}">Research</a></li>
+        <li>
+          <a href="{{ url_for('academics') }}">Academics</a>
+        </li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+
+    <!-- Landing Section -->
+    <section class="landing">
+      <h1>Research</h1>
+      <div class="buttons">
+        <button class="scroll-btn" data-target="#projects">Projects</button>
+        <button class="scroll-btn" data-target="#publications">
+          Publications
+        </button>
+        <button class="scroll-btn" data-target="#laboratory">Laboratory</button>
+      </div>
+    </section>
+
+    <!-- Sections -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="filter-btn" onclick="filterProjects('ongoing')">
+          Ongoing Projects
+        </button>
+        <button class="filter-btn" onclick="filterProjects('completed')">
+          Completed Projects
+        </button>
+      </div>
+
+      <div class="project-list">
+        {% for project in projects %}
+        <div
+          class="project-item"
+          data-status="{{ project.proj_status | lower }}"
+        >
+          <h4>{{ project.proj_name }}</h4>
+          <p>
+            <b>{{ project.proj_sponsor }}</b><br />
+            <span>{{ project.proj_start_date }}</span>-<span
+              >{{ project.proj_end_date }}</span
+            >
+            <span>({{ project.proj_status }})</span>
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <section id="publications" class="section">
+      <h2>Publications</h2>
+
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="filter-btn" onclick="filterPublications('all')">
+          All
+        </button>
+        <button class="filter-btn" onclick="filterPublications('Conference')">
+          Conference
+        </button>
+        <button class="filter-btn" onclick="filterPublications('Journal')">
+          Journal
+        </button>
+        <button class="filter-btn" onclick="filterPublications('Book')">
+          Book
+        </button>
+        <button class="filter-btn" onclick="filterPublications('Patent')">
+          Patent
+        </button>
+        <button class="filter-btn" onclick="filterPublications('Other')">
+          Other
+        </button>
+      </div>
+
+      <!-- Publications List -->
+      <div id="publications-list">
+        {% for publication in publications %}
+        <div class="publication-item" data-type="{{ publication.pub_type }}">
+          <p>{{ publication.pub_citation }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="laboratory" class="section">
+      <h2>Laboratory</h2>
+
+      <!-- Container for the paragraphs to enable scrolling -->
+      <div class="paragraph-container">
+        <!-- Paragraph 1: General information about the laboratory -->
+        <p class="laboratory-paragraph">
+          • Developed a research laboratory on Embedded Control Systems, which
+          is also utilized in deliver- ing laboratory component of SC700 course.
+          The research in this lab concentrates on designing embedded
+          controllers considering minimal sensing and/or coarse actuation. The
+          students in SC 700 were given hands-on exposure to various embedded
+          platforms. They study and analyze the limitations of these platforms.
+          The experiments are designed to identify and analyze the effect of
+          these limitations, when the embedded platform is used as a controller.
+          Currently, the SC700 course is suspended due to non-availability of
+          course material. It would be offered once the book on embedded control
+          is published.
+        </p>
+
+        <!-- Paragraph 2: Facilities in the laboratory -->
+        <p class="laboratory-paragraph">
+          • Developed a laboratory on Mobile robotics to supplement the course
+          on ”Advanced topics in robotics”. This laboratory has a in-house
+          developed motion capture system using ceiling mounted web-cams. The
+          laboratory experiments are designed in modules to solve various
+          problems defined for mobile robotic applications.
+        </p>
+
+        <!-- Paragraph 3: Ongoing projects in the laboratory -->
+        <p class="laboratory-paragraph">
+          • Developed a unique facility in IIT Bombay for conducting experiments
+          on multiple aerial and ground robots in collaboration with Prof.
+          Arpita Sinha, Systems and Control Engg. This lab- oratory is equipped
+          with ceiling cameras and associated software that can accurately
+          measure the movement of the ground and aerial robots so that motion
+          planning and control algorithms can receive location feedback. This
+          facility supports bench-marking our controller designs as the measured
+          feedback is accurate to be considered as ground truth.
+        </p>
+
+        <p class="laboratory-paragraph">
+          • Next plan is to facilitate experiments for underwater robotic
+          platforms and interconnected system of multiple robots in land, water
+          and air.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

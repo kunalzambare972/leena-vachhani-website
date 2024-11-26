@@ -1,0 +1,168 @@
+/* General Styling for the Students Section */
+#students {
+  padding: 50px 30px;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: "Poppins", sans-serif;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Hide overflow for the whole section */
+}
+
+/* Heading Style */
+#students h2 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  margin-bottom: 20px; /* Adds space between filter buttons and student list */
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap; /* Ensure buttons and dropdown can wrap */
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: "Exo 2", sans-serif;
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Year Dropdown Styling */
+.year-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "Exo 2", sans-serif;
+}
+
+.year-filter label {
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+#year-select {
+  padding: 10px 20px;
+  font-family: "Exo 2", sans-serif;
+  font-size: 16px;
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+#year-select:hover {
+  border-color: #555;
+}
+
+#year-select option {
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+/* Student List Layout */
+.student-list {
+  display: flex;
+  flex-direction: column; /* Stack student items vertically */
+  gap: 5px; /* Spacing between students */
+  height: 75vh;
+  overflow-y: auto; /* Make the student list scrollable */
+}
+
+/* Student Item Style */
+.student-item {
+  background-color: var(--grey);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.student-item h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.student-item p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  line-height: 1.6;
+}
+
+.student-item b {
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #students h2 {
+    font-size: 30px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .select-dropdown {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .student-item h4 {
+    font-size: 20px;
+  }
+
+  .student-item p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #students {
+    padding: 30px 20px;
+  }
+
+  #students h2 {
+    font-size: 20px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .year-filter {
+    margin-top: 20px;
+  }
+
+  .student-item h4 {
+    font-size: 18px;
+  }
+
+  .student-item p {
+    font-size: 12px;
+  }
+}

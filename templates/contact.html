@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leena Vachhani | Academics</title>
+    <script src="../static/js/nav.js"></script>
+    <script src="../static/js/research_scroll.js"></script>
+    <script src="../static/js/stud_filter.js"></script>
+    <link rel="stylesheet" href="../static/css/nav.css" />
+    <link rel="stylesheet" href="../static/css/contact.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#">Leena Vachhani</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('research') }}">Research</a></li>
+        <li>
+          <a href="{{ url_for('academics') }}">Academics</a>
+        </li>
+        <li><a class="active" href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+
+    <!-- Landing Section -->
+    <section class="contact">
+      <h1>Contact</h1>
+      <div class="contact-container">
+        <div class="contact-item">
+          <h2>Email</h2>
+          <p>
+            <a href="mailto:leena.vachhani@iitb.ac.in"
+              >leena.vachhani@iitb.ac.in</a
+            >
+          </p>
+        </div>
+        <div class="contact-item">
+          <h2>Address</h2>
+          <p>
+            109-A, Embedded Control Lab,<br />
+            Systems and Control Engineering,<br />
+            IIT Bombay,<br />
+            Powai, Mumbai, India - 400 076
+          </p>
+        </div>
+        <div class="contact-item">
+          <h2>Phone</h2>
+          <p><a href="tel:+1234567890">+91-22-25767833</a></p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

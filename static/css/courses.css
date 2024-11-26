@@ -1,0 +1,94 @@
+/* General Styling for Courses Section */
+#courses {
+  padding: 50px 30px;
+  background-color: var(--white);
+  color: var(--black);
+  background-color: #f8f8f8;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Heading Style */
+#courses h2 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Courses List Layout */
+.course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.course-item {
+  background-color: var(--grey);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-item h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.course-item h4 a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.course-item h4 a:hover {
+  text-decoration: underline;
+}
+
+.course-item p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .courses h2 {
+    font-size: 30px;
+  }
+
+  .course-item h4 {
+    font-size: 20px;
+  }
+
+  .course-item p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses {
+    padding: 30px 20px;
+  }
+
+  .courses h2 {
+    font-size: 20px;
+  }
+
+  .course-item h4 {
+    font-size: 16px;
+  }
+
+  .course-item p {
+    font-size: 12px;
+  }
+}

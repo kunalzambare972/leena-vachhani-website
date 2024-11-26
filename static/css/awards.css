@@ -1,0 +1,67 @@
+/* General Styling for Awards Section */
+#awards {
+  padding: 50px 30px;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+/* Heading Style */
+#awards h2 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Awards List Layout */
+#awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 75vh;
+  overflow-y: scroll;
+}
+
+/* Individual Award Item */
+.award-item {
+  background-color: var(--grey);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.award-item p {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: var(--black);
+  line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #awards h2 {
+    font-size: 30px;
+  }
+
+  .award-item p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #awards {
+    padding: 30px 20px;
+  }
+
+  #awards h2 {
+    font-size: 20px;
+  }
+
+  .award-item p {
+    font-size: 14px;
+  }
+}

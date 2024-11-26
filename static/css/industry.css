@@ -1,0 +1,100 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Poppins&display=swap");
+
+/* Define color variables */
+:root {
+  --primary-color: #003049;
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #e9e9e9;
+  --highlight-color: #1e90ff;
+}
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Styling for the Industrial Collaboration Section */
+#industrial-collaboration {
+  padding: 50px 30px;
+  background-color: #f8f8f8;
+  color: var(--black);
+  font-family: "Poppins", sans-serif;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Hide overflow for the whole section */
+}
+
+/* Heading Style */
+#industrial-collaboration h2 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: left;
+  position: sticky; /* Make the heading sticky */
+  top: 0; /* Keep the heading at the top */
+  z-index: 10; /* Ensure the heading stays above the paragraphs */
+  background-color: var(
+    --white
+  ); /* Add a white background to the heading to avoid overlap */
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+/* Paragraph Container to enable scrolling */
+#industrial-collaboration .paragraph-container {
+  overflow-y: auto;
+  max-height: calc(
+    100vh - 150px
+  ); /* Max height of the container, leaving space for the heading */
+  padding-right: 10px;
+}
+
+/* Paragraphs for Industrial Collaboration Section */
+.industrial-paragraph {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: var(--black);
+  line-height: 1.8;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: var(--grey);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #industrial-collaboration h2 {
+    font-size: 30px;
+  }
+
+  .industrial-paragraph {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #industrial-collaboration {
+    padding: 30px 20px;
+  }
+
+  #industrial-collaboration h2 {
+    font-size: 24px;
+  }
+
+  .industrial-paragraph {
+    font-size: 14px;
+  }
+}

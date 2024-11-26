@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leena Vachhani | Academics</title>
+    <script src="../static/js/nav.js"></script>
+    <script src="../static/js/research_scroll.js"></script>
+    <script src="../static/js/stud_filter.js"></script>
+    <link rel="stylesheet" href="../static/css/nav.css" />
+    <link rel="stylesheet" href="../static/css/acad_landing.css" />
+    <link rel="stylesheet" href="../static/css/students.css" />
+    <link rel="stylesheet" href="../static/css/courses.css" />
+    <link rel="stylesheet" href="../static/css/awards.css" />
+    <link rel="stylesheet" href="../static/css/industry.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#">Leena Vachhani</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('research') }}">Research</a></li>
+        <li>
+          <a class="active" href="{{ url_for('academics') }}">Academics</a>
+        </li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+
+    <!-- Landing Section -->
+    <section class="landing">
+      <h1>Academics</h1>
+      <div class="buttons">
+        <button class="scroll-btn" data-target="#students">Students</button>
+        <button class="scroll-btn" data-target="#courses">Courses</button>
+        <button class="scroll-btn" data-target="#awards">Awards</button>
+      </div>
+    </section>
+
+    <section id="students">
+      <h2>Students</h2>
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="filter-btn" onclick="filterStudents('MTech')">
+          M.Tech Students
+        </button>
+        <button class="filter-btn" onclick="filterStudents('PhD')">
+          PhD Students
+        </button>
+      </div>
+
+      <!-- Year Dropdown -->
+      <div class="year-filter">
+        <label for="year-select">Select Year:</label>
+        <select id="year-select" onchange="filterByYear()">
+          <option value="all">All Years</option>
+          {% for year in years %}
+          <option value="{{ year.stud_passing_year }}">
+            {{ year.stud_passing_year }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Student List -->
+      <div class="student-list">
+        {% for student in students %}
+        <div
+          class="student-item"
+          data-degree="{{ student.stud_degree }}"
+          data-year="{{ student.stud_passing_year }}"
+        >
+          <h4>
+            {{ student.stud_name }}
+            <span>({{ student.stud_passing_year }})</span>
+          </h4>
+          <p>
+            {% if student.stud_guide %}
+            <b>Guide:</b> {{ student.stud_guide }}<br />
+            {% endif %} {% if student.stud_coguide %}
+            <b>Co-Guides:</b> {{ student.stud_coguide }}<br />
+            {% endif %} {% if student.stud_proj %}
+            <b>Project:</b> {{ student.stud_proj }}<br />
+            {% endif %}
+            <b>Degree:</b> {{ student.stud_degree }}
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="courses" class="section">
+      <h2>Courses</h2>
+
+      <!-- Course List -->
+      <div class="course-list">
+        {% for course in courses %}
+        <div class="course-item">
+          <h4>
+            {% if course.cour_link %}
+            <!-- Check if cour_link is not empty -->
+            <a href="{{ course.cour_link }}" target="_blank"
+              >{{ course.cour_name }}</a
+            >
+            {% else %} {{ course.cour_name }} {% endif %}
+          </h4>
+
+          <!-- Only display semester if cour_sem is not null -->
+          {% if course.cour_sem %}
+          <p><b>Semester:</b> {{ course.cour_sem }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="awards" class="section">
+      <h2>Awards & Recognition</h2>
+
+      <!-- Awards List -->
+      <div id="awards-list">
+        {% for award in awards %}
+        <div class="award-item">
+          <p>{{ award.awards_citation }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </body>
+</html>

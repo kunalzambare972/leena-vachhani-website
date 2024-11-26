@@ -1,0 +1,260 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Poppins&display=swap");
+
+/* Define color variables */
+:root {
+  --primary-color: #003049;
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #e9e9e9;
+}
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Bio Section Styling */
+.bio-section {
+  height: 100vh; /* Full viewport height for the bio section */
+  padding: 60px 30px;
+  margin-bottom: 40px; /* Add margin to space it from the next section */
+}
+
+.bio-content {
+  margin: 0;
+  text-align: left;
+}
+
+.bio-content h2 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.bio-content p {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: var(--black);
+  line-height: 1.6;
+}
+
+/* Career Section Styling */
+.career {
+  height: 100vh;
+  padding: 60px 30px;
+  background-color: #f8f8f8;
+  color: var(--black);
+  margin-top: 40px; /* Space between bio and career section */
+}
+
+.career-title-container {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.career-title {
+  font-family: "Exo 2", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.career-nav {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 60px;
+}
+
+.career-tab {
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 30px;
+  margin: 0 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: none;
+  outline: none;
+}
+
+.career-tab:hover {
+  font-weight: bold;
+}
+
+.career-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.career-item {
+  display: none; /* Hide all items initially */
+  width: 100%;
+}
+
+.career-item#research {
+  display: block; /* Research interests should be visible by default */
+}
+
+.career-list {
+  list-style: none;
+  padding: 0;
+  width: 100%; /* Increase the width of the career list */
+  max-height: 50vh; /* Limit the height of the career list */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.career-list-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+  background: rgb(233, 233, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(233, 233, 233, 1) 0%,
+    rgba(251, 251, 251, 0) 100%
+  );
+}
+
+.career-list-item:hover {
+  transform: scale(1.01); /* Slightly increase size of the card */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow effect */
+}
+
+.career-list-item .role,
+.career-list-item .degree {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.career-list-item .institution {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: var(--black);
+  margin-top: 5px;
+}
+
+.career-list-item .dates {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: var(--black);
+  margin-top: 5px;
+}
+
+/* Responsive Design for Bio Section */
+@media screen and (max-width: 768px) {
+  /* Ensure the body scales well on mobile */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Bio Section Adjustments */
+  .bio-section {
+    height: auto;
+  }
+
+  .bio-content h2 {
+    font-size: 28px; /* Smaller font size for mobile */
+    margin-bottom: 15px;
+  }
+
+  .bio-content p {
+    font-size: 16px; /* Adjust text size on mobile */
+    margin-bottom: 10px;
+  }
+
+  .bio-section {
+    padding: 40px 15px; /* Reduced padding on smaller screens */
+  }
+
+  /* Career Section - Adjustments for Mobile */
+  .career {
+    padding: 40px 20px; /* Reduce padding for mobile */
+    height: auto; /* Make the height flexible */
+    margin-top: 20px; /* Space from the bio section */
+  }
+
+  .career-title {
+    font-size: 28px; /* Smaller title on mobile */
+  }
+
+  .career-nav {
+    flex-direction: column; /* Stack navigation buttons */
+    margin-bottom: 30px;
+  }
+
+  .career-tab {
+    font-size: 16px; /* Smaller font size for the tabs */
+    margin: 5px 0;
+    padding: 8px 20px;
+  }
+
+  .career-list-item .role,
+  .career-list-item .degree {
+    font-size: 18px;
+  }
+
+  .career-list-item .institution {
+    font-size: 16px;
+  }
+
+  .career-list-item .dates {
+    font-size: 14px;
+  }
+
+  /* Adjusting visibility and layout of career items */
+  .career-item {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Prevent overflowing content */
+  .career-list-item {
+    margin-bottom: 20px; /* Increased spacing between items */
+  }
+}
+
+/* Optional: Handling very small screens (below 480px) */
+@media screen and (max-width: 480px) {
+  .bio-content h2 {
+    font-size: 24px;
+  }
+
+  .bio-content p {
+    font-size: 14px;
+  }
+
+  .career-tab {
+    font-size: 14px; /* Adjust the font for very small screens */
+    padding: 6px 15px;
+  }
+
+  .career-list-item .role,
+  .career-list-item .degree {
+    font-size: 16px;
+  }
+
+  .career-list-item .institution,
+  .career-list-item .dates {
+    font-size: 14px;
+  }
+}

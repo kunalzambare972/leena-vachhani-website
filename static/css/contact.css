@@ -1,0 +1,106 @@
+/* Contact Section Styling */
+.contact {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align content to the left */
+  justify-content: center; /* Center vertically */
+  background-color: #f4f4f9;
+  padding: 30px 30px; /* Add padding for spacing */
+  text-align: left; /* Align text to the left */
+}
+
+/* Heading Styling */
+.contact h1 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 70px; /* Adjusted size for better scaling */
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px; /* Spacfing below the heading */
+  text-align: left;
+}
+
+/* Contact Container */
+.contact-container {
+  display: flex;
+  flex-direction: row; /* Align items in a row */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 50px; /* Space between items */
+  flex-wrap: wrap; /* Wrap items on smaller screens */
+  width: 100%;
+}
+
+/* Individual Contact Item */
+.contact-item {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1 1 300px; /* Flexible width for responsiveness */
+  max-width: 350px;
+}
+
+.contact-item h2 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.contact-item p,
+.contact-item a {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact h1 {
+    font-size: 50px; /* Adjust heading size for tablets */
+  }
+
+  .contact-container {
+    gap: 20px; /* Reduce gap between items */
+  }
+
+  .contact-item h2 {
+    font-size: 20px; /* Adjust subheading size */
+  }
+
+  .contact-item p {
+    font-size: 14px; /* Adjust paragraph font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 20px;
+  }
+
+  .contact h1 {
+    font-size: 40px; /* Smaller heading for mobiles */
+    margin-bottom: 20px;
+  }
+
+  .contact-item {
+    padding: 15px;
+  }
+
+  .contact-item h2 {
+    font-size: 18px;
+  }
+
+  .contact-item p {
+    font-size: 12px;
+  }
+}
