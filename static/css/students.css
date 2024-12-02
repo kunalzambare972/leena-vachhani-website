@@ -104,6 +104,12 @@
   margin-bottom: 5px;
 }
 
+.student-item .linkedin-logo {
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+}
+
 .student-item p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
@@ -111,7 +117,7 @@
   line-height: 1.6;
 }
 
-.student-item b {
+.student-item .li .student-item b {
   font-weight: 600;
 }
 
@@ -160,6 +166,11 @@
 
   .student-item h4 {
     font-size: 18px;
+  }
+
+  .student-item .linkedin-logo {
+    width: 18px;
+    height: 18px;
   }
 
   .student-item p {

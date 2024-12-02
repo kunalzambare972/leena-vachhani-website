@@ -49,7 +49,7 @@ def research():
     # Now execute the query for publications
     cursor.execute("""
                    SELECT pub_citation, pub_type, pub_links
-                   FROM publication
+                   FROM publications
                    ORDER BY 
                    FIELD(pub_type, 'Journal', 'Conference', 'Book', 'Patent', 'Other');
     """)
@@ -70,8 +70,18 @@ def academics():
 
     # Query to fetch student data including the new 'stud_degree' column
     cursor.execute("""
-        SELECT stud_name, stud_guide, stud_coguide, stud_proj, stud_degree, stud_passing_year
-        FROM students;
+        SELECT stud_name, stud_guide, stud_coguide, stud_proj, stud_degree, stud_passing_year, stud_link
+FROM students
+ORDER BY 
+    CASE
+        WHEN stud_degree = 'PhD' THEN 1
+        WHEN stud_degree = 'M. Tech' THEN 2
+    END,
+    CASE
+        WHEN stud_passing_year = 'ongoing' THEN 1
+        ELSE 2
+    END,
+    stud_passing_year DESC;
     """)
     
     # Fetch all the results from the query
@@ -80,7 +90,7 @@ def academics():
     # Fetching courses data
     cursor.execute("""
         SELECT 
-            cour_id AS cour_code,
+            cour_code,
             cour_name,
             cour_link,
             cour_sem
