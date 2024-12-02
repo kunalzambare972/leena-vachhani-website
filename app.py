@@ -48,10 +48,10 @@ def research():
 
     # Now execute the query for publications
     cursor.execute("""
-        SELECT pub_citation, pub_type
-        FROM publication
-        ORDER BY CAST(SUBSTRING(pub_citation, 
-                                LOCATE(',', pub_citation) - 4, 4) AS UNSIGNED) DESC
+                   SELECT pub_citation, pub_type, pub_links
+                   FROM publication
+                   ORDER BY 
+                   FIELD(pub_type, 'Journal', 'Conference', 'Book', 'Patent', 'Other');
     """)
 
     # Fetch all the results from the query (publications)

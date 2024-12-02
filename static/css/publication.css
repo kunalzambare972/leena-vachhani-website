@@ -91,6 +91,19 @@
   line-height: 1.6;
 }
 
+/* Publication Links Styling */
+.publication-item a {
+  text-decoration: underline; /* Remove underline */
+  cursor: pointer;
+  color: var(--black); /* Use primary color for links */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.publication-item a:hover {
+  color: var(--black); /* Change color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
 .publication-item span {
   font-weight: 500;
   color: #666;
@@ -98,10 +111,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  #publications{
+  #publications {
     height: auto;
   }
-  
+
   #publications h2 {
     font-size: 30px;
   }

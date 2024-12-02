@@ -87,17 +87,17 @@
         <button class="filter-btn" onclick="filterPublications('all')">
           All
         </button>
-        <button class="filter-btn" onclick="filterPublications('Conference')">
-          Conference
-        </button>
         <button class="filter-btn" onclick="filterPublications('Journal')">
           Journal
         </button>
-        <button class="filter-btn" onclick="filterPublications('Book')">
-          Book
+        <button class="filter-btn" onclick="filterPublications('Conference')">
+          Conference
         </button>
         <button class="filter-btn" onclick="filterPublications('Patent')">
           Patent
+        </button>
+        <button class="filter-btn" onclick="filterPublications('Book')">
+          Book
         </button>
         <button class="filter-btn" onclick="filterPublications('Other')">
           Other
@@ -108,7 +108,15 @@
       <div id="publications-list">
         {% for publication in publications %}
         <div class="publication-item" data-type="{{ publication.pub_type }}">
+          {% if publication.pub_links %}
+          <p>
+            <a href="{{ publication.pub_links }}" target="_blank"
+              >{{ publication.pub_citation }}</a
+            >
+          </p>
+          {% else %}
           <p>{{ publication.pub_citation }}</p>
+          {% endif %}
         </div>
         {% endfor %}
       </div>
