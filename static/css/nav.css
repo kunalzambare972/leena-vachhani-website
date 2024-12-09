@@ -100,6 +100,7 @@
     right: -250px; /* Initially off-screen */
     width: 250px;
     height: 100%;
+    z-index: 100;
     background-color: var(--grey);
     flex-direction: column;
     text-align: center;

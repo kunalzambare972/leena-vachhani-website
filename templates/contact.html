@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leena Vachhani | Academics</title>
-    <script src="../static/js/nav.js"></script>
-    <script src="../static/js/research_scroll.js"></script>
-    <script src="../static/js/stud_filter.js"></script>
-    <link rel="stylesheet" href="../static/css/nav.css" />
-    <link rel="stylesheet" href="../static/css/contact.css" />
+    <title>Leena Vachhani | Contact</title>
+    <script src="/leena-vachhani/static/js/nav.js"></script>
+    <script src="/leena-vachhani/static/js/research_scroll.js"></script>
+    <script src="/leena-vachhani/static/js/stud_filter.js"></script>
+    <link rel="stylesheet" href="/leena-vachhani/static/css/nav.css" />
+    <link rel="stylesheet" href="/leena-vachhani/static/css/contact.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
   </head>
   <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="logo">
-        <a href="#">Leena Vachhani</a>
+        <a href="/leena-vachhani">Leena Vachhani</a>
       </div>
       <ul class="nav-links">
         <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -31,17 +32,13 @@
       </div>
     </nav>
 
-    <!-- Landing Section -->
+    <!-- Contact Section -->
     <section class="contact">
       <h1>Contact</h1>
       <div class="contact-container">
         <div class="contact-item">
           <h2>Email</h2>
-          <p>
-            <a href="mailto:leena.vachhani@iitb.ac.in"
-              >leena.vachhani@iitb.ac.in</a
-            >
-          </p>
+          <p><a href="mailto:leena.vachhani@iitb.ac.in">leena.vachhani@iitb.ac.in</a></p>
         </div>
         <div class="contact-item">
           <h2>Address</h2>
@@ -55,6 +52,22 @@
         <div class="contact-item">
           <h2>Phone</h2>
           <p><a href="tel:+1234567890">+91-22-25767833</a></p>
+        </div>
+
+        <!-- Social Links Section -->
+        <div class="social-links">
+          <h2>Follow Me</h2>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/leena-vachhani" target="_blank" class="social-icon">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=your-google-scholar-id" target="_blank" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Leena-Vachhani" target="_blank" class="social-icon">
+              <i class="fab fa-researchgate"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>

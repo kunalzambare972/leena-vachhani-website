@@ -16,7 +16,7 @@
   font-size: 70px; /* Adjusted size for better scaling */
   font-weight: 700;
   color: var(--primary-color);
-  margin-bottom: 20px; /* Spacfing below the heading */
+  margin-bottom: 20px; /* Spacing below the heading */
   text-align: left;
 }
 
@@ -63,6 +63,36 @@
   text-decoration: underline;
 }
 
+/* Social Links Styling */
+.social-links {
+  margin-top: 30px; /* Space between contact items and social links */
+  text-align: center; /* Center the social links */
+}
+
+.social-links h2 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px; /* Space between social icons */
+  justify-content: center;
+}
+
+.social-icon {
+  font-size: 28px; /* Adjusted icon size */
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #000; /* Change color on hover */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact h1 {
@@ -79,6 +109,10 @@
 
   .contact-item p {
     font-size: 14px; /* Adjust paragraph font size */
+  }
+
+  .social-icons {
+    gap: 15px; /* Smaller gap for smaller screens */
   }
 }
 

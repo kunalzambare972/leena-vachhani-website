@@ -1,14 +1,14 @@
 from flask import Flask, render_template
 from db_connect import get_db_connection  # Import the database connection function
 
-app = Flask(__name__)
+leena_vachhani = Flask(__name__, static_url_path='/leena-vachhani/static', static_folder='static', template_folder='templates')
 
-@app.route('/')
+@leena_vachhani.route('/leena-vachhani/')
 def home():
     return render_template('index.html')
 
 # Route for the "Research" page
-@app.route('/research')
+@leena_vachhani.route('/leena-vachhani/research')
 def research():
     conn = get_db_connection()
     if conn is None:
@@ -45,7 +45,7 @@ def research():
     return render_template('research.html', projects=projects_data, publications=publications_data)
 
 # Route for the "Academics" page
-@app.route('/academics')
+@leena_vachhani.route('/leena-vachhani/academics')
 def academics():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
@@ -103,9 +103,9 @@ ORDER BY
     return render_template('academics.html', students=students_data, courses=courses_data, awards=awards_data, years=years_data)
 
 # Route for the "Contact" page
-@app.route('/contact')
+@leena_vachhani.route('/leena-vachhani/contact')
 def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    leena_vachhani.run(host='0.0.0.0', port=5000, debug=True)
